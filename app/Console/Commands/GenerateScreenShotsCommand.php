@@ -28,6 +28,8 @@ class GenerateScreenShotsCommand extends Command
      */
     public function handle(): int
     {
+        $this->call('orbit:clear');
+
         if ($this->argument('plugin')) {
             $plugins = \App\Models\Plugin::where('slug', $this->argument('plugin'))->get();
         } else {

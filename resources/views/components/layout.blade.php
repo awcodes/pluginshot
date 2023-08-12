@@ -1,5 +1,6 @@
 @props([
-    'title' => null
+    'title' => null,
+    'background' => 'ruvim-noga-o0R4iqk1eRQ-unsplash.jpg',
 ])
 
 <!DOCTYPE html>
@@ -17,15 +18,15 @@
     </head>
     <body class="antialiased bg-primary-800 text-white grid place-content-center">
         <div class="w-[2560px] h-[1440px] relative">
-            <div class="relative z-0">
-                <img src="{{asset('background-image.jpg')}}" alt="" width="2560" height="1440">
+            <div class="relative z-0" style="filter: blur(18px);">
+                <img src="{{asset($background)}}" alt="" width="2560" height="1440">
             </div>
             {{ $slot }}
-            <div class="absolute bottom-[70px] right-[70px] w-auto h-[70px] text-primary-500">
+            <div class="absolute bottom-[70px] right-[70px] w-auto h-[70px] text-primary-300">
                 <x-logo />
             </div>
             <div class="absolute bottom-[30px] right-[70px] text-white text-lg">
-                Photo by Pawel Czerwinski on Unsplash
+                Photo by Ruvim Noga on Unsplash
             </div>
         </div>
     </body>
